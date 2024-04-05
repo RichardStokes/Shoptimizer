@@ -15,9 +15,12 @@ def __retrieve_list_path():
 def create_new_master_list():
     pass
 
-def load_saved_list(list_path):
+def get_saved_list(list_path):
+    list = []
     with open(list_path) as list_file:
-        print(list_file.read())
+        for list_item in list_file:
+            list.append(list_item.strip())
+    return list
 
 
 opts = 2
@@ -42,10 +45,11 @@ while opt_choice not in range(1,3):
     except ValueError as e:
         print(input_choice_txt)
 
-if opt_choice == 1:
+if opt_choice == 1: # Copy Saved List
     list_path = __retrieve_list_path()
-    load_saved_list(list_path)
-elif opt_choice == 2:
+    list = get_saved_list(list_path)
+    
+elif opt_choice == 2:   # Create New Master List
     create_new_master_list()
 
 

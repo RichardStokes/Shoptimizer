@@ -1,7 +1,7 @@
 from list_item import ListItem
 import unittest
 
-class TestLineItem(unittest.TestCase):
+class TestListItem(unittest.TestCase):
 
     def test_init(self):
         foobar = ListItem()

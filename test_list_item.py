@@ -12,6 +12,10 @@ class TestListItem(unittest.TestCase):
         foobar = ListItem("Foo my bar")
         foobar.toggle_complete()
         self.assertTrue(foobar.complete)
+    
+    def test_title(self):
+        foobar = ListItem("\nHello, World!\n")
+        self.assertEqual(foobar.title, "Hello, World!")
 
 
 if __name__ == '__main__':

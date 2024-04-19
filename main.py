@@ -1,4 +1,5 @@
 import os
+from list_item import ListItem
 
 SAVED_LIST_PATH = './saved_lists'
 
@@ -30,8 +31,8 @@ def create_new_master_list():
 def get_saved_list(list_path):
     list = []
     with open(list_path) as list_file:
-        for list_item in list_file:
-            list.append(list_item.strip())
+        for item in list_file:
+            list.append(ListItem(item))
     return list
 
 
@@ -63,7 +64,7 @@ if opt_choice == 1: # Copy Saved List
           >"""))
     match choice:
         case 1:
-            create_new_list_item()
+            create_new_list_item(list)
         case 2: 
             toggle_item_completeness()
 

@@ -1,7 +1,7 @@
 class ListItem:
 
     def __init__(self, title=""):
-        self.title = str(title)
+        self.title = str(title).strip()
         self.complete = False
     
 
